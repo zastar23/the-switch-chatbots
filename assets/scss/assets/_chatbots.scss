@@ -1,0 +1,117 @@
+#chatbots {
+	margin: 5.375rem 0;
+	padding: 1rem;
+}
+
+.chatbots-title {
+	font-family: var(--ff-secondary);
+	font-size: var(--step-section-titles);
+	font-weight: var(--bold);
+	border-top: 2px solid;
+	border-image-source: linear-gradient(
+		90deg,
+		var(--color-accent) 20%,
+		var(--color-neutral-100) 50%
+	);
+	border-image-slice: 1;
+	margin-bottom: 3.5rem;
+}
+
+.chatbots-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-items: end;
+
+	@media (min-width: 760px) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+		align-items: end;
+		justify-items: start;
+	}
+
+	.chatbot {
+		border: 2px solid var(--color-neutral-900);
+		margin-bottom: 2.563rem;
+
+		@media (min-width: 760px) {
+			max-width: 40rem;
+		}
+
+		&-name {
+			border-bottom: 2px solid var(--color-neutral-900);
+			font-family: var(--ff-primary);
+			font-size: var(--step-section-subtitles);
+			font-weight: var(--regular);
+			padding: 1.25rem;
+
+			& > h3 {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.name {
+				color: var(--color-accent);
+			}
+		}
+
+		&-description {
+			padding: 1.25rem;
+			& > p {
+				font-family: var(--ff-primary);
+				font-weight: var(--regular);
+				font-size: var(--step-paragraps);
+				margin-bottom: 1.375rem;
+			}
+
+			@media (min-width: 760px) {
+				padding: 2rem;
+			}
+		}
+
+		&-btn {
+			font-family: var(--ff-primary);
+			font-weight: var(--regular);
+			color: var(--color-neutral-100);
+			background-color: var(--color-neutral-900);
+			width: clamp(9.75rem, calc(8.77rem + 4.36vw), 11.88rem);
+			height: clamp(2.38rem, calc(2.14rem + 1.03vw), 2.88rem);
+			display: grid;
+			place-content: center;
+			border-radius: 50px;
+			padding: 0.5rem;
+			cursor: pointer;
+			transition: all 250ms ease;
+
+			&:hover {
+				color: var(--color-accent);
+				transform: scale(1.1);
+				font-weight: var(--bold);
+			}
+
+			@media (min-width: 760px) {
+				margin-top: 3rem;
+			}
+		}
+
+		&-icon {
+			width: clamp(4rem, calc(3.31rem + 3.08vw), 6rem);
+			height: clamp(4rem, calc(3.31rem + 3.08vw), 6rem);
+			border-radius: 100vmax;
+			background-color: var(--color-neutral-900);
+			display: grid;
+			place-content: center;
+
+			@media (min-width: 760px) {
+				margin-bottom: 2rem;
+				margin-right: 5rem;
+				justify-self: end;
+			}
+
+			&-bubble {
+				width: clamp(2.38rem, calc(1.99rem + 1.73vw), 3.5rem);
+				height: clamp(2.38rem, calc(1.99rem + 1.73vw), 3.5rem);
+			}
+		}
+	}
+}

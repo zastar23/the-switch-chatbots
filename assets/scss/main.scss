@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Rubik:wght@700&display=swap');
+@import './assets/header';
+@import './assets/home';
+@import './assets/chatbots';
+@import './assets/aproach';
+@import './assets/steps';
+@import './assets/footer';
+@import './assets/features';
+@import './assets/variables';
+
+//  reset
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	box-sizing: inherit;
+	scroll-behavior: smooth;
+	transition: all 250ms ease;
+}
+
+body {
+	background-color: var(--color-neutral-100);
+	color: var(--color-neutral-900);
+	overflow-x: hidden;
+}
