@@ -1,6 +1,6 @@
 #features {
 	overflow-x: hidden;
-	padding: 1rem;
+	padding: var(--space-s);
 }
 
 .features-title {
@@ -37,8 +37,8 @@
 
 	span {
 		color: var(--color-accent);
-		align-self: start;
-		margin-top: 0.3rem;
+		margin-top: -0.3rem;
+		font-size: var(--step-section-subtitles);
 	}
 
 	h2 {
@@ -49,8 +49,14 @@
 
 .description-list-item {
 	font-size: var(--step-paragraps);
+	margin-left: 2rem;
+	font-family: var(--ff-primary);
+
+	@media (min-width: 760px) {
+		width: 35ch;
+	}
 }
 
 .features-description-list {
-	align-self: end;
+	align-self: center;
 }

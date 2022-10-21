@@ -1,12 +1,17 @@
+#home {
+	padding: var(--space-s);
+}
+
 .hero {
 	margin-top: 4rem;
 	display: flex;
 	flex-direction: column;
+
 	gap: 2rem;
-	padding: 1rem;
 
 	@media (min-width: 760px) {
 		flex-direction: row;
+		gap: 0;
 	}
 
 	&-text {
@@ -34,7 +39,7 @@
 			font-weight: var(--bold);
 			font-size: var(--step-main-title);
 			position: relative;
-			z-index: -1;
+			z-index: 0;
 
 			&::before {
 				content: 'chatbots';
@@ -46,6 +51,7 @@
 				text-shadow: -1px -1px 0 var(--color-accent),
 					1px -1px 0 var(--color-accent), -1px 1px 0 var(--color-accent),
 					1px 1px 0 var(--color-accent);
+				transform: translateZ(-1px);
 			}
 		}
 	}
@@ -81,6 +87,14 @@
 			place-content: center;
 			border-radius: 50px;
 			padding: 0.5rem;
+
+			&:hover {
+				transition: all 250ms ease-out;
+				transform: scale(1.1);
+				color: var(--color-neutral-900);
+				background-color: var(--color-accent);
+				font-weight: var(--bold);
+			}
 		}
 
 		& > :nth-child(2) {
@@ -92,6 +106,14 @@
 			place-content: center;
 			border-radius: 50px;
 			border: 2px solid var(--color-accent);
+
+			&:hover {
+				transition: all 250ms ease-out;
+				transform: scale(1.1);
+				color: var(--color-neutral-100);
+				background-color: var(--color-accent);
+				font-weight: var(--bold);
+			}
 		}
 
 		@media (min-width: 760px) {
@@ -111,6 +133,26 @@
 			width: 100%;
 			height: 100%;
 			margin-top: -2rem;
+		}
+
+		@media (min-width: 1000px) {
+			align-self: center;
+			height: 100%;
+		}
+	}
+
+	&-arrow {
+		text-align: right;
+
+		& > a > img {
+			transform: rotate(90deg);
+			width: 5rem;
+			height: 5rem;
+
+			@media (min-width: 1000px) {
+				width: 10rem;
+				height: 10rem;
+			}
 		}
 	}
 }

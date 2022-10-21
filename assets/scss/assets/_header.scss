@@ -1,6 +1,6 @@
 .header {
 	margin-top: -2.4rem;
-	padding-top: 1rem;
+	padding-top: var(--space-s);
 	overflow-x: hidden;
 
 	&-container {
@@ -9,6 +9,8 @@
 		align-items: center;
 		position: sticky;
 		top: 5%;
+		z-index: 2;
+		margin: 0 auto;
 	}
 
 	&-nav {
@@ -76,12 +78,12 @@
 	text-align: center;
 	position: sticky;
 	top: 4%;
-	transition: all 175ms ease;
-	transform: translateX(90vw);
-	z-index: 2;
+	left: 90%;
+	transition: all 350ms ease;
+	z-index: 3;
 
 	@media (min-width: 760px) {
-		transform: translateX(95vw);
+		left: 95%;
 	}
 
 	@media (min-width: 1000px) {
@@ -171,4 +173,16 @@
 	font-size: 1.188rem;
 	opacity: 0.7;
 	font-family: var(--ff-primary);
+}
+
+.scroll-change-visible {
+	opacity: 1;
+}
+
+.scroll-change-hidden {
+	opacity: 0;
+}
+
+.rotate-square-clock {
+	transform: rotate(90deg);
 }

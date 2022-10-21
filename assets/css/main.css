@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Rubik:wght@700&display=swap");
 .header {
   margin-top: -2.4rem;
-  padding-top: 1rem;
+  padding-top: var(--space-s);
   overflow-x: hidden;
 }
 .header-container {
@@ -10,6 +10,8 @@
   align-items: center;
   position: sticky;
   top: 5%;
+  z-index: 2;
+  margin: 0 auto;
 }
 .header-nav {
   font-family: var(--ff-secondary);
@@ -66,13 +68,13 @@
   text-align: center;
   position: sticky;
   top: 4%;
-  transition: all 175ms ease;
-  transform: translateX(90vw);
-  z-index: 2;
+  left: 90%;
+  transition: all 350ms ease;
+  z-index: 3;
 }
 @media (min-width: 760px) {
   .square {
-    transform: translateX(95vw);
+    left: 95%;
   }
 }
 @media (min-width: 1000px) {
@@ -157,16 +159,32 @@
   font-family: var(--ff-primary);
 }
 
+.scroll-change-visible {
+  opacity: 1;
+}
+
+.scroll-change-hidden {
+  opacity: 0;
+}
+
+.rotate-square-clock {
+  transform: rotate(90deg);
+}
+
+#home {
+  padding: var(--space-s);
+}
+
 .hero {
   margin-top: 4rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 1rem;
 }
 @media (min-width: 760px) {
   .hero {
     flex-direction: row;
+    gap: 0;
   }
 }
 .hero-text {
@@ -192,7 +210,7 @@
   font-weight: var(--bold);
   font-size: var(--step-main-title);
   position: relative;
-  z-index: -1;
+  z-index: 0;
 }
 .hero-text .chatbot-word::before {
   content: "chatbots";
@@ -202,6 +220,7 @@
   z-index: -1;
   color: var(--color-neutral-100);
   text-shadow: -1px -1px 0 var(--color-accent), 1px -1px 0 var(--color-accent), -1px 1px 0 var(--color-accent), 1px 1px 0 var(--color-accent);
+  transform: translateZ(-1px);
 }
 .hero-description {
   font-family: var(--ff-primary);
@@ -235,6 +254,13 @@
   border-radius: 50px;
   padding: 0.5rem;
 }
+.hero-buttons > :first-child:hover {
+  transition: all 250ms ease-out;
+  transform: scale(1.1);
+  color: var(--color-neutral-900);
+  background-color: var(--color-accent);
+  font-weight: var(--bold);
+}
 .hero-buttons > :nth-child(2) {
   color: var(--color-neutral-900);
   text-decoration: none;
@@ -244,6 +270,13 @@
   place-content: center;
   border-radius: 50px;
   border: 2px solid var(--color-accent);
+}
+.hero-buttons > :nth-child(2):hover {
+  transition: all 250ms ease-out;
+  transform: scale(1.1);
+  color: var(--color-neutral-100);
+  background-color: var(--color-accent);
+  font-weight: var(--bold);
 }
 @media (min-width: 760px) {
   .hero-buttons {
@@ -263,6 +296,26 @@
   height: 100%;
   margin-top: -2rem;
 }
+@media (min-width: 1000px) {
+  .hero-image {
+    align-self: center;
+    height: 100%;
+  }
+}
+.hero-arrow {
+  text-align: right;
+}
+.hero-arrow > a > img {
+  transform: rotate(90deg);
+  width: 5rem;
+  height: 5rem;
+}
+@media (min-width: 1000px) {
+  .hero-arrow > a > img {
+    width: 10rem;
+    height: 10rem;
+  }
+}
 
 @media (min-width: 1400px) {
   .hero-flex-container {
@@ -272,7 +325,7 @@
 }
 #chatbots {
   margin: 5.375rem 0;
-  padding: 1rem;
+  padding: var(--space-s);
 }
 
 .chatbots-title {
@@ -382,7 +435,7 @@
 
 #approach {
   margin: 5.375rem 0;
-  padding: 1rem;
+  padding: var(--space-s);
 }
 
 .approach-title {
@@ -436,6 +489,7 @@
   .cta-text > p {
     margin-bottom: 3rem;
     grid-column: 2/3;
+    width: 35ch;
   }
 }
 .cta-title {
@@ -471,6 +525,18 @@
   .cta-btn {
     grid-column: 2/3;
     grid-row: 2;
+  }
+}
+.cta-btn .approach-arrow {
+  transform: rotate(90deg);
+  width: 3rem;
+  height: 3rem;
+}
+@media (min-width: 1000px) {
+  .cta-btn .approach-arrow {
+    transform: none;
+    width: 5rem;
+    height: 5rem;
   }
 }
 
@@ -523,17 +589,19 @@
   .steps-container {
     grid-template-columns: repeat(3, 8rem);
     gap: 5rem;
+    margin-right: 2rem;
   }
 }
 @media (min-width: 1400px) {
   .steps-container {
     gap: 8rem;
     grid-template-columns: repeat(3, 10rem);
+    margin-right: 4rem;
   }
 }
 
 .footer {
-  padding: 1rem;
+  padding: var(--space-s);
   min-height: 25.875rem;
   background-image: url("../images/contact-bg-mobile.webp");
   background-repeat: no-repeat;
@@ -606,7 +674,7 @@
 
 #features {
   overflow-x: hidden;
-  padding: 1rem;
+  padding: var(--space-s);
 }
 
 .features-title {
@@ -640,8 +708,8 @@
 }
 .flex-container span {
   color: var(--color-accent);
-  align-self: start;
-  margin-top: 0.3rem;
+  margin-top: -0.3rem;
+  font-size: var(--step-section-subtitles);
 }
 .flex-container h2 {
   font-family: var(--ff-primary);
@@ -650,14 +718,21 @@
 
 .description-list-item {
   font-size: var(--step-paragraps);
+  margin-left: 2rem;
+  font-family: var(--ff-primary);
+}
+@media (min-width: 760px) {
+  .description-list-item {
+    width: 35ch;
+  }
 }
 
 .features-description-list {
-  align-self: end;
+  align-self: center;
 }
 
 :root {
-  --color-neutral-100: #000000;
+  --color-neutral-100: #030303;
   --color-neutral-900: hsla(0, 0%, 100%, 1);
   --color-accent: hsla(193, 90%, 52%, 1);
   --ff-primary: "Montserrat", sans-serif;
@@ -678,6 +753,7 @@
   --step-features-subtitles: clamp(1.88rem, calc(1.38rem + 2.5vw), 4.38rem);
   --step-big-numbers: clamp(3.75rem, calc(2.25rem + 7.5vw), 11.25rem);
   --step-footer-title: clamp(3rem, calc(2.85rem + 0.75vw), 3.75rem);
+  --space-s: clamp(1rem, calc(0.83rem + 0.74vw), 1.5rem);
   --logo: clamp(4.56rem, calc(3.52rem + 4.62vw), 7.56rem);
 }
 
@@ -697,6 +773,8 @@ body {
   background-color: var(--color-neutral-100);
   color: var(--color-neutral-900);
   overflow-x: hidden;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=main.css.map */

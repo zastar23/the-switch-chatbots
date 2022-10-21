@@ -1,6 +1,6 @@
 #approach {
 	margin: 5.375rem 0;
-	padding: 1rem;
+	padding: var(--space-s);
 }
 
 .approach-title {
@@ -61,6 +61,7 @@
 			@media (min-width: 1000px) {
 				margin-bottom: 3rem;
 				grid-column: 2 / 3;
+				width: 35ch;
 			}
 		}
 	}
@@ -98,6 +99,18 @@
 		@media (min-width: 1000px) {
 			grid-column: 2 /3;
 			grid-row: 2;
+		}
+
+		.approach-arrow {
+			transform: rotate(90deg);
+			width: 3rem;
+			height: 3rem;
+
+			@media (min-width: 1000px) {
+				transform: none;
+				width: 5rem;
+				height: 5rem;
+			}
 		}
 	}
 }

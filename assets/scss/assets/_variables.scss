@@ -1,7 +1,7 @@
 // variables
 :root {
 	// colors
-	--color-neutral-100: #000000;
+	--color-neutral-100: #030303;
 	--color-neutral-900: hsla(0, 0%, 100%, 1);
 	--color-accent: hsla(193, 90%, 52%, 1);
 
@@ -27,6 +27,9 @@
 	--step-features-subtitles: clamp(1.88rem, calc(1.38rem + 2.5vw), 4.38rem);
 	--step-big-numbers: clamp(3.75rem, calc(2.25rem + 7.5vw), 11.25rem);
 	--step-footer-title: clamp(3rem, calc(2.85rem + 0.75vw), 3.75rem);
+
+	// padding
+	--space-s: clamp(1rem, calc(0.83rem + 0.74vw), 1.5rem);
 
 	// logo
 	--logo: clamp(4.56rem, calc(3.52rem + 4.62vw), 7.56rem);
