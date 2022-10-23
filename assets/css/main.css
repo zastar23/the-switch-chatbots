@@ -420,6 +420,7 @@
   background-color: var(--color-neutral-900);
   display: grid;
   place-content: center;
+  position: relative;
 }
 @media (min-width: 760px) {
   .chatbots-container .chatbot-icon {
